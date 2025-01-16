@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
+// import ScrollTrigger from 'gsap/ScrollTrigger';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
 gsap.registerPlugin(ScrollTrigger);
 
 const Screen2 = () => {
@@ -59,17 +60,46 @@ const Screen2 = () => {
     };
   }, []);
 
-  return (
-    <div className="min-h-screen bg-[rgb(16,16,16)] text-white p-8">
-      {/* Header */}
-      {/* <div className="flex justify-between items-center">
-        <div className="text-xl">B one consulting</div>
-        <button className="px-6 py-2 border border-blue-600 text-blue-600 rounded-full">
-          SAY HELLO
-        </button>
-      </div> */}
+  //scroll automatique
+  useEffect(() => {
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-      {/* Main Title */}
+    // Select elements
+    const element = document.querySelector("#screen2");
+    // const targetSection = document.querySelector("#targetSection");
+
+    if (!element ) {
+      console.warn("Required elements not found");
+      return;
+    }
+
+    // Create the scroll trigger animation
+    const scrollTrigger = ScrollTrigger.create({
+      trigger: element,
+      start: "top center",
+      end: "bottom center",
+      // markers:true,
+      onEnter: () => {
+        gsap.to(window, {
+          scrollTo: {
+            y: element.offsetTop,
+            offsetY: 0
+          },
+          duration: 1
+        });
+      }
+    });
+
+    // Cleanup function
+    return () => {
+      scrollTrigger.kill();
+    };
+  }, []);
+
+  return (
+    <div id="screen2" className="min-h-screen bg-[rgb(16,16,16)] text-white p-8">
+    
       <h1 className="text-5xl mt-20 mb-24 bg-gradient-to-b from-gray-400 to-white bg-clip-text text-transparent">
         360° SERVICES
       </h1>
@@ -112,6 +142,7 @@ const Screen2 = () => {
 
         {/* Service 3 */}
         <div 
+        id="targetSection"
           className="service-item border-l border-gray-600 pl-6 pr-4"
           ref={(el) => { containerRefs.current[2] = el }}
         >

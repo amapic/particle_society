@@ -14,7 +14,7 @@ const MenuItem = ({ text }: { text: string }) => {
       <div
         ref={textRef}
         data-text
-        className="hover:font-white text-[rgb(240,240,240)] text-md opacity-0 -translate-x-[10px] w-[200px] leading-3 text-right pr-4"
+        className="hover:font-white text-[rgb(230,230,230)] text-md opacity-0 -translate-x-[10px] w-[200px] leading-4 text-right pr-4"
       >
         {text}
       </div>
@@ -142,11 +142,14 @@ const Menu = () => {
 
   return (
     <>
+    <div className="fixed h-[100px] w-screen bg-[rgb(16,16,16)] text-white z-10">
+     
+      </div>
       <div className="flex justify-between items-center">
-        <div ref={bOneRef} className="fixed text-white top-10 left-10 text-4xl font-['Prompt']">
+        <div ref={bOneRef} className="fixed text-white top-8 left-8  font-[14px] font-['Prompt'] z-20">
           B one consulting
         </div>
-        <button ref={helloRef} className="w-48 h-12 fixed top-10 right-10 px-6 py-2 border border-blue-600 text-blue-600 rounded-full">
+        <button ref={helloRef} className="font-[16px] z-20 w-48 h-8 fixed top-9 right-8 border border-[rgb(200, 50, 255)] text-blue-600 rounded-full">
           SAY HELLO
         </button>
       </div>

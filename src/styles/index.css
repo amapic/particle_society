@@ -66,6 +66,16 @@ canvas {
   }
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 /* custom tailwind class */
 .top-30 {
   top: 7.5rem;
@@ -78,3 +88,5 @@ canvas {
 .left-30 {
   left: 7.5rem;
 }
+
+

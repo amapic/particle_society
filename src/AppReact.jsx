@@ -8,7 +8,7 @@ function App() {
     <div className="content">
       <Menu />
       <Hero />
-      <div className="spacer"></div>
+      {/* <div className="spacer"></div> */}
       <Screen2 />
       <Screen3 />
       <Screen4 />

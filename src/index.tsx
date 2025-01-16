@@ -33,7 +33,7 @@ async function initialize() {
     initializeReact();
     
     // Then initialize Three.js
-    await initializeThreeJS();
+    // await initializeThreeJS();
   } catch (error) {
     console.error('Initialization error:', error);
   }

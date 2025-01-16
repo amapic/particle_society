@@ -38,23 +38,23 @@ const Hero = () => {
   return (
     <>
       <div className="relative h-screen w-full flex items-center justify-center">
-        <div className="grid grid-cols-2 grid-rows-2 gap-4">
+        <div className="grid grid-cols-2 grid-rows-2 gap-4 pb-16">
           <div
             ref={textRef}
-            className="text-white text-8xl font-['Prompt'] text-right"
+            className="text-white text-7xl font-['Prompt'] text-right"
           >
-            We create
+            WE CREATE
           </div>
           <div></div>
           <div></div>
           <div
             ref={textRef2}
-            className="text-white text-8xl font-['Prompt'] text-left"
+            className="text-white text-7xl font-['Prompt'] text-left"
           >
-            You conquer!
+            YOU CONQUER!
           </div>
         </div>
-        <div className="absolute bottom-10 left-10 text-white text-2xl font-['Prompt']">
+        <div className="absolute bottom-8 left-8 text-white text-[16px] font-['Prompt']">
           Scroll for more <span className="text-white text-xl font-['Prompt']">↓</span>
         </div>
       </div>
